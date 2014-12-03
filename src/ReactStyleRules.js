@@ -28,14 +28,33 @@ function ReactStyleRules(rulesMap) {
   var i = 0;
   var rules = [];
   var replacer = namespaceReplacer.bind(null, this, namespace);
+
   for (var selectors in rulesMap) {
-    var ruleText = namespacify(selectors, replacer) + '{';
-    var declarations = rulesMap[selectors];
-    for (var property in declarations) {
-      var value = declarations[property];
-      ruleText += hyphenate(property) + ':' + value + ';';
+    var ruleText = '';
+
+    if (selectors.substring(0, 6) === '@media') {
+      ruleText = selectors + '{';
+      var mediaRuleText = '';
+      for (var mediaSelectors in selectors) {
+        mediaRuleText += namespacify(mediaSelectors, replacer) + '{';
+        var mediaDeclarations = selectors[mediaSelectors];
+        for (var prop in mediaDeclarations) {
+          var val = mediaDeclarations[prop];
+          mediaRuleText += hyphenate(prop) + ':' + val + ';';
+        }
+        mediaRuleText += '}';
+      }
+      ruleText += mediaRuleText + '}';
+    } else {
+      ruleText = namespacify(selectors, replacer) + '{';
+      var declarations = rulesMap[selectors];
+      for (var property in declarations) {
+        var value = declarations[property];
+        ruleText += hyphenate(property) + ':' + value + ';';
+      }
+      ruleText += '}';
     }
-    ruleText += '}';
+
     rules[i] = ruleText;
     i++;
   }
