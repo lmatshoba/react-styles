@@ -1,6 +1,6 @@
 /**
  * @providesModule ReactStyleHead
- * @jsx React.DOM 
+ * @jsx React.DOM
  */
 
 'use strict'
@@ -22,7 +22,7 @@ var ReactStyleHead = React.createClass({
   },
 
   render: function() {
-    return this.transferPropsTo(
+    return (
       <head>
         {this.props.children}
         {ReactStyle.renderToComponents()}
