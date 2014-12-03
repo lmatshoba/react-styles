@@ -35,7 +35,7 @@ function ReactStyleRules(rulesMap) {
     if (selectors.substring(0, 6) === '@media') {
       ruleText = selectors + '{';
       var mediaRuleText = '';
-      for (var mediaSelectors in selectors) {
+      for (var mediaSelectors in rulesMap[selectors]) {
         mediaRuleText += namespacify(mediaSelectors, replacer) + '{';
         var mediaDeclarations = selectors[mediaSelectors];
         for (var prop in mediaDeclarations) {
