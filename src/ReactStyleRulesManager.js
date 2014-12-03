@@ -39,7 +39,7 @@ ReactStyleRulesManager.prototype.addRules = function(styleRules) {
     throw new Error('Invalid rules');
   }
   var styleRulesList = this._styleRulesList;
-  for (var i = 0, j = styleRulesList.lenth; i < j; i++) {
+  for (var i = 0, j = styleRulesList.length; i < j; i++) {
     var anotherReactStyleRules = styleRulesList[i];
     if (anotherReactStyleRules === styleRules) {
       return false;
