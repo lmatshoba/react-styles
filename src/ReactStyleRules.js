@@ -37,7 +37,7 @@ function ReactStyleRules(rulesMap) {
       var mediaRuleText = '';
       for (var mediaSelectors in rulesMap[selectors]) {
         mediaRuleText += namespacify(mediaSelectors, replacer) + '{';
-        var mediaDeclarations = selectors[mediaSelectors];
+        var mediaDeclarations = rulesMap[selectors][mediaSelectors];
         for (var prop in mediaDeclarations) {
           var val = mediaDeclarations[prop];
           mediaRuleText += hyphenate(prop) + ':' + val + ';';
