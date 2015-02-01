@@ -4,15 +4,12 @@
   "description": "Utility to manage styles for React JS components",
   "main": "main.js",
   "dependencies": {
-    "React": "git://github.com/facebook/react.git"
+    "React": "0.13.0-beta.1"
   },
   "author": {
     "name": "Hedger Wang",
     "email": "hedgerwang@gmail.com",
     "url": "http://github.com/hedgerwang"
-  },
-  "engines": {
-    "node": ">=0.10.0"
   },
   "license": "Apache-2.0"
 }
