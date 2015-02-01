@@ -1,5 +1,5 @@
 {
-  "name": "react-stylesheets",
+  "name": "react-styles",
   "version": "0.1.5",
   "description": "Utility to manage styles for React JS components",
   "main": "main.js",
