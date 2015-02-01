@@ -6,7 +6,7 @@
 'use strict'
 
 var React = require('React');
-var ReactStyle = require('ReactStyle');
+var ReactStyle = require('./ReactStyle');
 
 var ReactStyleHead = React.createClass({
   componentDidMount: function() {
