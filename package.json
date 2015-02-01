@@ -2,7 +2,12 @@
   "name": "react-styles",
   "version": "0.1.5",
   "description": "Utility to manage styles for React JS components",
-  "main": "main.js",
+  "files": [
+    "README.md",
+    "react-styles.js",
+    "src/"
+  ],
+  "main": "react-styles.js",
   "dependencies": {
     "React": "0.13.0-beta.1"
   },
